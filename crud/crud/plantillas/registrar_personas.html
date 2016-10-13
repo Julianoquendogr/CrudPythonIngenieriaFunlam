@@ -1,0 +1,10 @@
+{% if tipo == "registrar" %}
+	{% if respuesta == "si" %}
+		<div class="correcto">La persona ha sido registrada con &eacute;xito...</div>
+	{% else if respuesta == "existe" %}
+		<div class="incorrecto">Ya existe una persona registrada con esa c&eacute;dula...</div>
+	{% else %}
+		<div class="incorrecto">La persona no pudo ser registrada</div>
+	{% endif %}
+	{% endif %}		
+{% endif %}

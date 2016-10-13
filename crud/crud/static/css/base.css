@@ -1,0 +1,115 @@
+body
+{
+	background-color:#EFEFF5;
+}
+footer
+{
+  text-align:center;
+}
+#form_us
+{
+	width:100%;
+	padding: 5%;
+}
+.cuadro_div
+{  
+  margin-left: 38%;
+  margin-top: 60px;
+  /*margin-bottom: 5%;*/
+  background-color: #fff;
+  width: 25%;
+  height: auto;
+  box-shadow: 1px 1px 11px 1px #252525;
+  /*overflow: hidden;*/
+}
+.cuadro_div_tabla
+{
+  margin-left: 4%;
+  margin-top: 4%;
+  margin-bottom: 1%;
+  background-color: #fff;
+  width: 90%;
+  height: auto;
+  box-shadow: 1px 1px 11px 1px #252525;
+  padding:1%;
+} 
+#guardar_us
+{
+	width:100%;
+}
+#respuesta
+{
+  display: block;
+  width: 50%;
+  margin-left: 25%;
+  margin-top: 0.5%;
+}
+#respuesta2
+{
+  display: block;
+  width: 100%;
+  float:left;
+}
+.ocupacion
+{
+  padding:5%;
+}
+.check_oc
+{
+  display: none;
+}
+#cuerpo_mensaje
+{
+  height: 450px;
+}
+
+tbody 
+{
+  display: block;
+  height: 40vh;
+  min-height: 200px;
+  overflow-Y: scroll;
+}
+
+tr 
+{
+  display: block;
+  overflow: hidden;
+}
+
+th,td
+{
+  width:80vh;
+}
+
+input[type="checkbox"]:checked + label {
+  background: url(../images/checked.png) no-repeat;
+}
+
+input[type="checkbox"] + label {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  background: url(../images/unchecked.png) no-repeat;
+  cursor: pointer;
+}
+.id
+{
+  width:10%;
+}
+.nombre
+{
+  width:25%;
+}
+.cedula
+{
+  width:10%;
+}
+.fecha
+{
+  width:10%;
+}
+.estado
+{
+  width:10%;
+}

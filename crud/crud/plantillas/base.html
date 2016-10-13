@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang='es'>
+<head>
+	<meta charset='utf-8'>
+	<title>
+	{% block titulo %}
+	{% endblock %}
+	</title>
+	<link rel='stylesheet' href='{{STATIC_URL}}css/base.css'>
+	<link rel='stylesheet' href='{{STATIC_URL}}css/bootstrap.css'>
+    <link rel='stylesheet' href='{{STATIC_URL}}font-awesome-4.3.0/css/font-awesome.css'>
+    <link rel='stylesheet' href='{{STATIC_URL}}css/jquery.datetimepicker.css'>
+    <link rel='stylesheet' href='{{STATIC_URL}}css/chosen.css'>
+	<script src='{{STATIC_URL}}js/jquery-1.11.3.js'></script>
+	<script src='{{STATIC_URL}}js/funciones.js'></script>
+	<script src='{{STATIC_URL}}js/fbasic.js'></script>
+	<script src='{{STATIC_URL}}js/base.js'></script>
+	<script src='{{STATIC_URL}}js/bootstrap.js'></script>
+	<script type='text/javascript' src='{{STATIC_URL}}js/chosen.jquery.js'></script>
+	<script type='text/javascript' src='{{STATIC_URL}}js/getcookie.js'></script>
+	<script type='text/javascript' src='{{STATIC_URL}}js/jquery.datetimepicker.js'></script>
+	<!--Bloque de Funciones-->
+	<script type='text/javascript' src='{{STATIC_URL}}js/personas.js'></script>
+	{% block funcionesjs%}
+	{% endblock %}
+</head>
+<body>
+	<header>
+		<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+			<div class="navbar-header">
+				<button id="btn_navegacion" type="button" data-target="#navbarCollapse" data-toggle="collapse" class="navbar-toggle">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+				</button>
+				<!-- src='{{STATIC_URL}}images/avila.png' -->
+				<img id='img_avila' class='navbar-brand' style='height:50px'>
+			</div>
+			<div id="navbarCollapse" class="collapse navbar-collapse navbar-ex1-collapse">
+			<ul class="nav navbar-nav">
+				<li class="dropdown">
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+						Carga Personas <b class="caret"></b>
+						<ul class="dropdown-menu">
+							<li><a id="cargar_personas" name="cargar_personas" href="/cargar/persona">Registro de Persona</a></li>
+							<li><a id="consultar_personas" name="consultar_personas"style='display:none' href="/consultar/personas">Consulta de Persona</a></li>
+							<li><a id="jq_consultar_personas" name="jq_consultar_personas" href="/consultar/personas2">Consulta de personas JS</a></li>
+						</ul>
+					</a>
+				</li>
+			</ul>
+			</div>
+		</nav>	
+	</header>
+	<div class='contenido' id='cuerpo_contenido'>
+	{% block contenido %}
+	{% endblock %}
+	</section>
+	<footer>
+		<p>Carga de crud @Gsantu, desarrollado con Django 1.4 + Bootstrap 3 + Jquery 1.11.3 </p>
+	</footer>
+</body>
+</html>

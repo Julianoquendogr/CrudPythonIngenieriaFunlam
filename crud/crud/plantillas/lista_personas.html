@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% block titulo %}
+CRUD EJM
+{% endblock %}
+{% block contenido %}
+	{% block funcionesjs%}
+	<script type="text/javascript" src="{{STATIC_URL}}js/lista_personas.js"></script>
+	{% endblock %}
+<div class='cuadro_div_tabla'>
+<form name ="formulario" id='formulario' class='form-horizontal' enctype="multipart/form-data">
+	<fieldset><legend><h2>Cuadro Consulta tradicional </h2></legend></fieldset>{% csrf_token %}
+	<div class="listado_tabla" id="tabla_consulta_cuadro">
+		<table class='table table-striped table-hover' id='tabla_consulta'>
+				<thead>
+					<th data-campo:'id'>Id</th>
+					<th data-campo:'nombre'>Nombre</th>
+					<th data-campo:'cedula'>Cedula</th>
+					<th data-campo:'fecha'>Fecha</th>
+					<th data-campo:'estado'>Estado</th>
+				</thead>
+				<tbody>	
+				{% for elemento in lista %}
+					<tr>
+						<td data-campo:'id' class='id'>{{ elemento.id_persona.id_persona }}</td>
+						<td data-campo:'nombre' class='nombre'>{{ elemento.id_persona.nombre }}</td>
+						<td data-campo:'cedula' class='cedula'>{{ elemento.id_persona.cedula }}</td>
+						<td data-campo:'fecha' class='fecha'>{{ elemento.id_persona.fecha  }}</td>
+						<td data-campo:'estado' class='estado'>{{ elemento.id_persona.id_estado.nombre_estado }}</td>
+					</tr>
+				{% endfor %}
+				</tbody>		
+		</table>
+	</div>
+	<div>{{ caso }}</div>
+	<div role="toolbar" id="pager" name="pager">
+		<button type="button" class="btn btn-primary pag_btn {{ paginador.clase_paginador_anterior }}" onclick='ir_tabla({{ paginador.offset_tabla }},{{ paginador.cuantos_tabla }},20,2);' title="Ir anterior"><i class="fa fa-chevron-left"></i></button>
+		<button type="button" class="btn btn-primary pag_btn {{ paginador.clase_paginador_siguiente }}" onclick='ir_tabla({{ paginador.offset_tabla}},{{paginador.cuantos_tabla}},20,1)' title="Ir siguiente"><i class="fa fa-chevron-right"></i></button>
+		<span class='hide' id="offset_tabla" name="offset_tabla">{{ paginador.offset_tabla }}</span>
+		<span class='span_paginacion' id="inicio_tabla" name="inicio_tabla">{{ paginador.inicio_tabla }}</span><span class="span_paginacion">-</span>
+		<span class='span_paginacion' id="fin_tabla" name="fin_tabla">{{ paginador.fin_tabla }}</span><span> de </span><span class="span_paginacion">:</span>
+		<span class='span_paginacion' id="cuantos_tabla" name="cuantos_tabla">{{ paginador.cuantos_tabla}}</span>
+	</div>
+</form>
+</div>	
+{% endblock %}

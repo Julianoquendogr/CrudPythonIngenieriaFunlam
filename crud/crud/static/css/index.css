@@ -1,0 +1,31 @@
+body
+{
+	background-color:#EFEFF5;
+}
+#form_us
+{
+	width:100%;
+	padding: 5%;
+}
+.cuadro_div
+{  
+  float: left;
+  margin-left: 30%;
+  margin-top: 60px;
+  margin-bottom: 5%;
+  background-color: #fff;
+  width: 25%;
+  height: auto;
+  box-shadow: 1px 1px 11px 1px #252525;
+  /*overflow: hidden;*/
+} 
+#guardar_us
+{
+	width:100%;
+}
+.chosen-boots
+{
+  width: 350px;
+}
+.datepicker
+{z-index:1151 !important;}

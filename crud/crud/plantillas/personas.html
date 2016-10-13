@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+{% block titulo %}
+CRUD EJM
+{% endblock %}
+{% block contenido %}
+<div class='cuadro_div'>
+	<div id='form_us'>
+		<form name ="formulario" id='formulario' class='form-horizontal' enctype="multipart/form-data">{% csrf_token %}
+			<fieldset><legend><h1>Registro de Personas</h1></legend></fieldset>
+			<div class='form-group'>
+				<div class='col-lg-12'>
+					{{ formulario.nombre_usuario }}
+				</div>	
+			</div>
+			<div class='form-group'>
+				<div class='col-lg-12'>
+					{{ formulario.cedula_usuario }}
+				</div>	
+			</div>
+			<div class='form-group'>
+				<div class='col-lg-12'>
+					{{ formulario.estado_usuario }}
+				</div>
+			</div>
+			<div class='form-group'>
+				<div class="col-lg-12">
+					{{ formulario.fecha_usuario  }}
+				</div>
+			</div>
+			<div class='form-group'>
+				<div class="col-lg-12">
+					{{ formulario.foto_usuario }}
+				</div>
+			</div>
+			<hr>
+			<div class='ocupacion form-group'>
+			<h4>Profesi&oacute;n/ Ocupaci&oacute;n</h4>
+				{% for elemento in lista_tipos %}
+				<div class="col-lg-12">
+					<input class='check_oc' name="tipo{{forloop.counter}}" id="tipo{{forloop.counter}}" type="checkbox" value="{{ elemento.id }}" >
+					<label for="tipo{{forloop.counter}}">
+						<span>
+							<div class="ef_text1" style="margin:5px 0 0 30px">{{ elemento.nombre_tipo }}</div>
+						</span>
+					</label>					
+				</div>
+				{% endfor %} 
+			</div>	
+			<input type="hidden" id="cantipos" name="cantipos" value="{{cantipos}}">
+			<p><div type='button' class='btn btn-primary' id='guardar_us'>Registrar</div></p>
+		</form>
+	</div>	
+</div>	
+<div id="respuesta"></div>
+{% endblock %}
